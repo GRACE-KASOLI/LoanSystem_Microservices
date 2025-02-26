@@ -1,0 +1,27 @@
+package com.example.LoanService;
+
+public class RepaymentRequest {
+    private Long loanId;
+    private String phoneNumber;
+    private String amount;
+
+    // Getters and setters
+    public Long getLoanId() {
+        return loanId;
+    }
+    public void setLoanId(Long loanId) {
+        this.loanId = loanId;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public String getAmount() {
+        return amount;
+    }
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+}
