@@ -1,0 +1,29 @@
+<div class="page-container">
+  <div class="form-card">
+    <h2>Apply for a Loan</h2>
+    <form [formGroup]="loanForm" (ngSubmit)="applyLoan()">
+
+      <label>User ID:</label>
+      <input type="text" formControlName="userId" placeholder="Enter User ID" />
+
+      <label>Amount:</label>
+      <input type="number" formControlName="amount" placeholder="Enter Loan Amount" />
+
+      <label>Phone Number:</label>
+      <input type="text" formControlName="phoneNumber" placeholder="Enter Phone Number" />
+
+      <label>Interest Rate (%):</label>
+      <input type="number" formControlName="interestRate" placeholder="Enter Interest Rate" />
+
+      <label>Total Amount Due:</label>
+      <input type="number" formControlName="totalAmountDue" placeholder="Total Amount Due" [disabled]="true" />
+
+      <button type="submit" [disabled]="loanForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Applying...' : 'Apply' }}
+      </button>
+
+      <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </form>
+  </div>
+</div>

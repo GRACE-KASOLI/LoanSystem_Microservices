@@ -1,0 +1,105 @@
+/* src/app/styles.css */
+p {
+  color: #4CAF50;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+}
+/* src/app/styles.css */
+.welcome-heading {
+  font-size: 2.5em;
+  color: #4CAF50;  /* Green color */
+  text-align: center;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.subheading {
+  font-size: 1.2em;
+  color: #555;  /* Dark grey color */
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+:host {
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Make sure the body takes up the full height */
+  background-color: #f4f4f9; /* Light background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent overflow */
+}
+
+h1.main-heading {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+}
+
+p.sub-heading {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 700px; /* Limit the width */
+  height: 100%; /* Ensure content takes up full height */
+}
+
+.left-side {
+  padding: 1rem;
+}
+
+.logo {
+  max-width: 150px; /* Adjust logo size */
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .main {
+    max-width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .logo {
+    max-width: 120px; /* Adjust logo size for smaller screens */
+  }
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

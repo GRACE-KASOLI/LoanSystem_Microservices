@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <h1 class="logo">Loan Management System</h1>
+  <div class="nav-buttons">
+    <button (click)="navigateTo('/loan-create')" class="nav-btn">Create Loan</button>
+    <button (click)="navigateTo('/loan-list')" class="nav-btn">Loan List</button>
+  </div>
+</nav>
+
+<div class="dashboard-container">
+  <div class="dashboard-content">
+    <div class="dashboard-item total-loans">
+      <h3>Total Loans</h3>
+      <p>{{ dashboardData?.totalLoans }}</p>
+    </div>
+
+    <div class="dashboard-item active-loans">
+      <h3>Active Loans</h3>
+      <p>{{ dashboardData?.activeLoans }}</p>
+    </div>
+
+    <div class="dashboard-item total-disbursed">
+      <h3>Total Disbursed</h3>
+      <p>{{ dashboardData?.totalDisbursed | currency }}</p>
+    </div>
+
+    <div class="dashboard-item total-repaid">
+      <h3>Total Repaid</h3>
+      <p>{{ dashboardData?.totalRepaid | currency }}</p>
+    </div>
+    <div style="width: 100%; max-width: 400px; margin: auto;">
+      <canvas baseChart
+              [data]="loanChartData"
+              [labels]="loanChartData.labels"
+              [type]="loanChartType"
+              [options]="loanChartOptions"
+              [plugins]="[]">
+      </canvas>
+    </div>
+  </div>
+</div>
+

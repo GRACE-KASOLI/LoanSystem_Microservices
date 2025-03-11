@@ -1,0 +1,42 @@
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Role</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}</td>
+    <td>
+      <input *ngIf="editingUserId === user.id" [(ngModel)]="user.email" />
+      <span *ngIf="editingUserId !== user.id">{{ user.email }}</span>
+    </td>
+    <td>
+      <input *ngIf="editingUserId === user.id" [(ngModel)]="user.name" />
+      <span *ngIf="editingUserId !== user.id">{{ user.name }}</span>
+    </td>
+    <td>
+      <input *ngIf="editingUserId === user.id" [(ngModel)]="user.phone" />
+      <span *ngIf="editingUserId !== user.id">{{ user.phone }}</span>
+    </td>
+    <td>
+      <select *ngIf="editingUserId === user.id" [(ngModel)]="user.role">
+        <option value="ADMIN">Admin</option>
+        <option value="MEMBER">Member</option>
+      </select>
+      <span *ngIf="editingUserId !== user.id">{{ user.role }}</span>
+    </td>
+    <td>
+      <button *ngIf="editingUserId !== user.id" (click)="startEdit(user.id)">Edit</button>
+      <button *ngIf="editingUserId === user.id" (click)="updateUser(user)">Save</button>
+      <button *ngIf="editingUserId === user.id" (click)="cancelEdit()">Cancel</button>
+      <button (click)="deleteUser(user.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

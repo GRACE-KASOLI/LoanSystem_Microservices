@@ -1,0 +1,41 @@
+<div class="page-container">
+  <div class="table-card">
+    <h2>Loan List</h2>
+
+    <!-- ✅ Display error message if fetching loans fails -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <!-- ✅ Show message if loan list is empty -->
+    <div *ngIf="loans.length === 0 && !errorMessage" class="empty-message">
+      No loans available.
+    </div>
+
+    <table *ngIf="loans.length > 0">
+      <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Amount</th>
+        <th>Phone Number</th>
+        <th>Interest Rate</th>
+        <th>Total Amount Due</th>
+        <th>Actions</th> <!-- ✅ Added Actions Column -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let loan of loans">
+        <td>{{ loan.userId }}</td>
+        <td>{{ loan.amount | currency }}</td> <!-- ✅ Format amount as currency -->
+        <td>{{ loan.phoneNumber }}</td>
+        <td>{{ loan.interestRate }}%</td>
+        <td>{{ loan.totalAmountDue | currency }}</td>
+        <td>
+          <button class="action-button update-button" (click)="updateLoan(loan)">Update</button>
+          <button class="action-button delete-button" (click)="deleteLoan(loan.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

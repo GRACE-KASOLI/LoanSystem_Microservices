@@ -1,0 +1,19 @@
+<div class="signup-container">
+  <h2>Sign Up</h2>
+
+  <input [(ngModel)]="name" placeholder="Name" type="text" />
+  <input [(ngModel)]="email" placeholder="Email" type="email" />
+  <input [(ngModel)]="phone" placeholder="Phone" type="tel" /> <!-- Updated to phone -->
+  <input [(ngModel)]="password" placeholder="Password" type="password" />
+
+  <select [(ngModel)]="role">
+    <option value="MEMBER">Member</option>
+    <option value="ADMIN">Admin</option>
+  </select>
+
+  <button (click)="signup()">Sign Up</button>
+
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+</div>
